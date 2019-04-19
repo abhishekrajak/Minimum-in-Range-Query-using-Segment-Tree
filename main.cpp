@@ -17,12 +17,15 @@ void createSegmentTree(int data[], int tree[], int pos, int low, int high){
 }
 
 int minQuery(int tree[], int qlow, int qhigh, int low, int high, int pos){
+        /*total overlap*/
     if(qlow<=low && qhigh>=high){
         return tree[pos];
     }
+        /*no overlap*/
     if(qlow>high || qhigh<low){
         return INT32_MAX;
     }
+        /*partial overlap*/
     int mid = (low+high)/2;
     return min(minQuery(tree, qlow, qhigh, low, mid, 2*pos+1), minQuery(tree, qlow, qhigh, mid+1, high, 2*pos+2));
 }
