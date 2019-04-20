@@ -31,11 +31,7 @@ int minQuery(int tree[], int qlow, int qhigh, int low, int high, int pos){
 }
 
 int main(){
-
-    /*
-     * if # of elements in array is N
-     * then size of tree must be 4*N-1
-     * */
+    
 
     return 0;
 }
